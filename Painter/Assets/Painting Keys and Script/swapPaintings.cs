@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class swapPaintings : MonoBehaviour {
 
-    public GameObject g1;
-    public GameObject g2;
+    //list of different paintings we have for activating and deactivating
+    public List<GameObject> gList = new List<GameObject>();
+    int currObj;
+
     // Use this for initialization
     void Start()
     {
-        g2.SetActive(false);
+        //need to know which painting we're currently on
+        currObj = 0;
+
+        //deactivate all but the first painting
+        for (int i = 1; i < gList.Count; i++)
+        {
+            gList[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("[7]"))
+        //move to next painting on left click
+        if (Input.GetMouseButtonDown(0) && currObj < gList.Count - 1)
         {
-            g1.SetActive(true);
-            g2.SetActive(false);
+            gList[currObj].SetActive(false);
+            gList[currObj+1].SetActive(true);
+            currObj++;
         }
-
-        if (Input.GetKeyDown("[8]"))
+        //move to previous painting on right click
+        if (Input.GetMouseButtonDown(1) && currObj > 0)
         {
-            g1.SetActive(false);
-            g2.SetActive(true);
+            gList[currObj].SetActive(false);
+            gList[currObj-1].SetActive(true);
+            currObj--;
         }
     }
 }

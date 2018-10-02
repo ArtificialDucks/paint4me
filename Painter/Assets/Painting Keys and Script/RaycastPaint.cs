@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RaycastPaint : MonoBehaviour {
     Ray ray;
-    //RaycastHit hit;
     // Use this for initialization
     void Start () {
 		
@@ -14,10 +13,5 @@ public class RaycastPaint : MonoBehaviour {
 	void Update () {
         //casts a ray to the position of the mouse
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-       //if (Physics.Raycast(ray, out hit))
-       //{
-       //   
-       //    
-       //}
     }
 }

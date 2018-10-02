@@ -8,46 +8,48 @@ public class PaintingCore : MonoBehaviour {
     public string InputKey;
 
     //this variable lets you decide per block what color it will change to
-    private Color myColor;
-    private ColorChange colorchange;
-    private GameObject ColorControl;
+    private Color currColor;
 
+    //get current color from color change script
+    GameObject changeScript;
+    ColorChange colorChange;
+    
+    //for controlling blocks to change or not
+    public bool CanChangeColor;
+
+    //access render to apply color to
     private MeshRenderer r;
-    //private bool canChange;
+
     // Use this for initialization
     void Start () {
         //Need to get the renderer of the object before we can make changes to it
         r = GetComponent<MeshRenderer>();
 
-        //get color change object
-        ColorControl = GameObject.Find("ColorManager");
-        colorchange = ColorControl.GetComponent<ColorChange>();
-        myColor = colorchange.myColor;
         //allow the color to be changed
-        //canChange = true;
-	}
+        //CanChangeColor = true;
+
+        //need color controller script to determine current active color
+        changeScript = GameObject.Find("ColorControl");
+        colorChange = changeScript.GetComponent<ColorChange>();
+        currColor = colorChange.myColor;
+
+        CanChangeColor = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        myColor = colorchange.myColor;
+        currColor = colorChange.myColor;
         //change color when the key is pressed
-        //if (Input.GetKeyDown(InputKey))
-        //{
-        //    ChangeColor();
-        //}
+        if (Input.GetKeyDown(InputKey) && CanChangeColor)
+        {
+            ChangeColor();
+        }
 	}
-
-    void OnMouseOver()
-    {
-        ChangeColor();
-    }
-
+    
     //Change the color when key is painted
     void ChangeColor()
     {
         //Need to get a color that set our material color to it
-        r.material.color = myColor;
+        r.material.color = currColor;
     }
-
 }
