@@ -12,11 +12,12 @@ public class PuzzleController : MonoBehaviour {
 	public Puzzle[] puzzles; //Required points for Solved
 
 	private int counter;
+	private bool solvedCheck;
 	void Start ()
 	{
+		solvedCheck = false;
 		counter = 0;
 		ScoreUpdate ();
-		solved.text = "Unfinished";
 	}
 	// Update is called once per frame
 	void Update () {
@@ -30,17 +31,23 @@ public class PuzzleController : MonoBehaviour {
 
 			if (temp.isSolved == true) {
 				counter += 1;
-				ScoreUpdate ();
 			}
 		}
 
 		//If optimal score is reached, image is "solved"
 		if (counter == puzzles.Length) {
-			solved.text = "Finished";
+			solvedCheck = true;
 		}
+
+		ScoreUpdate ();
 	}
 
 	void ScoreUpdate () {
 		score.text = "Score: " + counter.ToString ();
+		if (solvedCheck) {
+			solved.text = "Finished";
+		} else { 
+			solved.text = "Unfinished";
+		}
 	}
 }
