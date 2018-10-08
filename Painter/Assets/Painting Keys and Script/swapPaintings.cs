@@ -8,6 +8,10 @@ public class swapPaintings : MonoBehaviour {
     public List<GameObject> gList = new List<GameObject>();
     int currObj;
 
+    //need camera script to warn after painting change
+    public GameObject cam;
+    CameraChange CamChange;
+
     // Use this for initialization
     void Start()
     {
@@ -19,6 +23,9 @@ public class swapPaintings : MonoBehaviour {
         {
             gList[i].SetActive(false);
         }
+
+        cam = GameObject.Find("Main Camera");
+        CamChange = cam.GetComponent<CameraChange>();
     }
 
     // Update is called once per frame
@@ -30,6 +37,7 @@ public class swapPaintings : MonoBehaviour {
             gList[currObj].SetActive(false);
             gList[currObj+1].SetActive(true);
             currObj++;
+            CamChange.CurrentPainting++;
         }
         //move to previous painting on right click
         if (Input.GetMouseButtonDown(1) && currObj > 0)
@@ -37,6 +45,7 @@ public class swapPaintings : MonoBehaviour {
             gList[currObj].SetActive(false);
             gList[currObj-1].SetActive(true);
             currObj--;
+            CamChange.CurrentPainting--;
         }
     }
 }

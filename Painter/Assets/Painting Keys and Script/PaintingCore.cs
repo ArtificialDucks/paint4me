@@ -33,7 +33,9 @@ public class PaintingCore : MonoBehaviour {
         colorChange = changeScript.GetComponent<ColorChange>();
         currColor = colorChange.myColor;
 
-        CanChangeColor = true;
+        //CanChangeColor = true;
+
+        r.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -50,6 +52,7 @@ public class PaintingCore : MonoBehaviour {
     void ChangeColor()
     {
         //Need to get a color that set our material color to it
+        r.enabled = true;
         r.material.color = currColor;
     }
 }
