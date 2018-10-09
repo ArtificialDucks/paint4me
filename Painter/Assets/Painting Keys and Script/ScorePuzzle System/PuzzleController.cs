@@ -13,6 +13,9 @@ public class PuzzleController : MonoBehaviour {
 
 	private int counter;
 	private bool solvedCheck;
+	public float targetTime = 30.0f;
+	public swapPaintings swap;
+	private bool timerRunning = false;
 	void Start ()
 	{
 		solvedCheck = false;
@@ -21,7 +24,12 @@ public class PuzzleController : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		if (timerRunning) targetTime -= Time.deltaTime;
 
+		if (targetTime <= 0.0f)
+		{
+			timerEnded();
+		}
 		counter = 0;
 
 		//Check for if a canvas block says it's "solved" increase the score
@@ -45,9 +53,20 @@ public class PuzzleController : MonoBehaviour {
 	void ScoreUpdate () {
 		score.text = "Score: " + counter.ToString ();
 		if (solvedCheck) {
-			solved.text = "Finished";
+			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
+			timerRunning = true;
 		} else { 
-			solved.text = "Unfinished";
+			if (counter == 0) solved.text = "Judging Commissioner:\nI look forward to your finished work.";
+			else if (counter == 1) solved.text = "Judging Commissioner:\nIt's coming along I see.";
+			else if (counter == 2) solved.text = "Judging Commissioner:\nReally shaping up now.";
+			else if (counter == 3) solved.text = "Judging Commissioner:\nYou really have some talent!";
+			else if (counter == 4) solved.text = "Judging Commissioner:\nThis is turning into a masterpiece!";
+			else if (counter == 5) solved.text = "Judging Commissioner:\nIt's so beautiful... *sniff*";
 		}
+	}
+	void timerEnded()
+	{
+		targetTime = 30.0f;
+		swap.Next ();
 	}
 }

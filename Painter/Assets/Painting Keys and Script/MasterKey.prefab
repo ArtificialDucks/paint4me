@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65237130642256408}
   - component: {fileID: 23608614388436596}
   - component: {fileID: 114164235406523798}
+  - component: {fileID: 114945897556118554}
   m_Layer: 0
   m_Name: MasterKey
   m_TagString: Untagged
@@ -107,5 +108,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a5ad0c6db2cb84aa334aeb6d124c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputKey: 
   currColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &114945897556118554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349677956084298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a97998019d7046b11d346b3546026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSolved: 0
+  matchColor: {r: 0, g: 0, b: 0, a: 0}

@@ -34,18 +34,32 @@ public class swapPaintings : MonoBehaviour {
         //move to next painting on left click
         if (Input.GetMouseButtonDown(0) && currObj < gList.Count - 1)
         {
-            gList[currObj].SetActive(false);
-            gList[currObj+1].SetActive(true);
-            currObj++;
-            CamChange.CurrentPainting++;
+			Next ();
         }
         //move to previous painting on right click
         if (Input.GetMouseButtonDown(1) && currObj > 0)
         {
-            gList[currObj].SetActive(false);
-            gList[currObj-1].SetActive(true);
-            currObj--;
-            CamChange.CurrentPainting--;
+			Previous ();
         }
     }
+
+	public void Next()
+	{
+		if (currObj < gList.Count - 1) {
+			gList [currObj].SetActive (false);
+			gList [currObj + 1].SetActive (true);
+			currObj++;
+			CamChange.CurrentPainting++;
+		}
+	}
+
+	public void Previous()
+	{
+		if (currObj > 0) {
+			gList [currObj].SetActive (false);
+			gList [currObj - 1].SetActive (true);
+			currObj--;
+			CamChange.CurrentPainting--;
+		}
+	}
 }
