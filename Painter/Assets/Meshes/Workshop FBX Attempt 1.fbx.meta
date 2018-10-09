@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a22c2d329dd4f6648b91644aed22629c
-timeCreated: 1538540883
+guid: c5c57e28fd16f5249ae94c68a6235c93
+timeCreated: 1539044288
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -19,38 +19,39 @@ ModelImporter:
     100022: paint_can_3
     100024: paint_can_4
     100026: Paintings_for_Sale
-    100028: potted_plant
-    100030: reference_image
-    100032: Room_Base
-    100034: room_base
-    100036: Room_Decoration
-    100038: sale_desk
-    100040: shelf
-    100042: shelf_decoration_1
-    100044: shelf_decoration_2
-    100046: shelf_decoration_3
-    100048: shelf_decoration_4
-    100050: shelf_decoration_5
-    100052: shelf_decoration_6
-    100054: sold_painting_1
-    100056: sold_painting_2
-    100058: sold_painting_3
-    100060: sold_painting_4
-    100062: sold_painting_5
-    100064: sold_painting_6
-    100066: sold_painting_7
-    100068: sold_painting_8
-    100070: sold_painting_label_1
-    100072: sold_painting_label_2
-    100074: sold_painting_label_3
-    100076: sold_painting_label_4
-    100078: sold_painting_label_5
-    100080: sold_painting_label_6
-    100082: sold_painting_label_7
-    100084: sold_painting_label_8
-    100086: stool
-    100088: vase_decoration
-    100090: //RootNode
+    100028: pCube1
+    100030: potted_plant
+    100032: reference_image
+    100034: Room_Base
+    100036: room_base
+    100038: Room_Decoration
+    100040: sale_desk
+    100042: shelf
+    100044: shelf_decoration_1
+    100046: shelf_decoration_2
+    100048: shelf_decoration_3
+    100050: shelf_decoration_4
+    100052: shelf_decoration_5
+    100054: shelf_decoration_6
+    100056: sold_painting_1
+    100058: sold_painting_2
+    100060: sold_painting_3
+    100062: sold_painting_4
+    100064: sold_painting_5
+    100066: sold_painting_6
+    100068: sold_painting_7
+    100070: sold_painting_8
+    100072: sold_painting_label_1
+    100074: sold_painting_label_2
+    100076: sold_painting_label_3
+    100078: sold_painting_label_4
+    100080: sold_painting_label_5
+    100082: sold_painting_label_6
+    100084: sold_painting_label_7
+    100086: sold_painting_label_8
+    100088: stool
+    100090: vase_decoration
+    100092: //RootNode
     400000: art_desk
     400002: bookcase
     400004: bookcase_decoration_1
@@ -65,39 +66,62 @@ ModelImporter:
     400022: paint_can_3
     400024: paint_can_4
     400026: Paintings_for_Sale
-    400028: potted_plant
-    400030: reference_image
-    400032: Room_Base
-    400034: room_base
-    400036: Room_Decoration
-    400038: sale_desk
-    400040: shelf
-    400042: shelf_decoration_1
-    400044: shelf_decoration_2
-    400046: shelf_decoration_3
-    400048: shelf_decoration_4
-    400050: shelf_decoration_5
-    400052: shelf_decoration_6
-    400054: sold_painting_1
-    400056: sold_painting_2
-    400058: sold_painting_3
-    400060: sold_painting_4
-    400062: sold_painting_5
-    400064: sold_painting_6
-    400066: sold_painting_7
-    400068: sold_painting_8
-    400070: sold_painting_label_1
-    400072: sold_painting_label_2
-    400074: sold_painting_label_3
-    400076: sold_painting_label_4
-    400078: sold_painting_label_5
-    400080: sold_painting_label_6
-    400082: sold_painting_label_7
-    400084: sold_painting_label_8
-    400086: stool
-    400088: vase_decoration
-    400090: //RootNode
+    400028: pCube1
+    400030: potted_plant
+    400032: reference_image
+    400034: Room_Base
+    400036: room_base
+    400038: Room_Decoration
+    400040: sale_desk
+    400042: shelf
+    400044: shelf_decoration_1
+    400046: shelf_decoration_2
+    400048: shelf_decoration_3
+    400050: shelf_decoration_4
+    400052: shelf_decoration_5
+    400054: shelf_decoration_6
+    400056: sold_painting_1
+    400058: sold_painting_2
+    400060: sold_painting_3
+    400062: sold_painting_4
+    400064: sold_painting_5
+    400066: sold_painting_6
+    400068: sold_painting_7
+    400070: sold_painting_8
+    400072: sold_painting_label_1
+    400074: sold_painting_label_2
+    400076: sold_painting_label_3
+    400078: sold_painting_label_4
+    400080: sold_painting_label_5
+    400082: sold_painting_label_6
+    400084: sold_painting_label_7
+    400086: sold_painting_label_8
+    400088: stool
+    400090: vase_decoration
+    400092: //RootNode
     2100000: lambert1
+    2100002: phong8
+    2100004: Drawer_Set
+    2100006: Bookcase
+    2100008: Shelf
+    2100010: Selling_Table
+    2100012: Stool
+    2100014: Pot
+    2100016: Dirt
+    2100018: Leaves
+    2100020: Trunk
+    2100022: Carpet
+    2100024: Vase
+    2100026: Red_Paint_Can
+    2100028: Blue_Paint_Can
+    2100030: Metal_Can
+    2100032: Yellow_Paint_Can
+    2100034: Green_Paint_Can
+    2100036: Plaque
+    2100038: Blank_Canvas
+    2100040: lambert3
+    2100042: phong6
+    2100044: Cityscape
     2300000: art_desk
     2300002: bookcase
     2300004: bookcase_decoration_1
@@ -110,35 +134,36 @@ ModelImporter:
     2300018: paint_can_2
     2300020: paint_can_3
     2300022: paint_can_4
-    2300024: potted_plant
-    2300026: reference_image
-    2300028: room_base
-    2300030: sale_desk
-    2300032: shelf
-    2300034: shelf_decoration_1
-    2300036: shelf_decoration_2
-    2300038: shelf_decoration_3
-    2300040: shelf_decoration_4
-    2300042: shelf_decoration_5
-    2300044: shelf_decoration_6
-    2300046: sold_painting_1
-    2300048: sold_painting_2
-    2300050: sold_painting_3
-    2300052: sold_painting_4
-    2300054: sold_painting_5
-    2300056: sold_painting_6
-    2300058: sold_painting_7
-    2300060: sold_painting_8
-    2300062: sold_painting_label_1
-    2300064: sold_painting_label_2
-    2300066: sold_painting_label_3
-    2300068: sold_painting_label_4
-    2300070: sold_painting_label_5
-    2300072: sold_painting_label_6
-    2300074: sold_painting_label_7
-    2300076: sold_painting_label_8
-    2300078: stool
-    2300080: vase_decoration
+    2300024: pCube1
+    2300026: potted_plant
+    2300028: reference_image
+    2300030: room_base
+    2300032: sale_desk
+    2300034: shelf
+    2300036: shelf_decoration_1
+    2300038: shelf_decoration_2
+    2300040: shelf_decoration_3
+    2300042: shelf_decoration_4
+    2300044: shelf_decoration_5
+    2300046: shelf_decoration_6
+    2300048: sold_painting_1
+    2300050: sold_painting_2
+    2300052: sold_painting_3
+    2300054: sold_painting_4
+    2300056: sold_painting_5
+    2300058: sold_painting_6
+    2300060: sold_painting_7
+    2300062: sold_painting_8
+    2300064: sold_painting_label_1
+    2300066: sold_painting_label_2
+    2300068: sold_painting_label_3
+    2300070: sold_painting_label_4
+    2300072: sold_painting_label_5
+    2300074: sold_painting_label_6
+    2300076: sold_painting_label_7
+    2300078: sold_painting_label_8
+    2300080: stool
+    2300082: vase_decoration
     3300000: art_desk
     3300002: bookcase
     3300004: bookcase_decoration_1
@@ -151,35 +176,36 @@ ModelImporter:
     3300018: paint_can_2
     3300020: paint_can_3
     3300022: paint_can_4
-    3300024: potted_plant
-    3300026: reference_image
-    3300028: room_base
-    3300030: sale_desk
-    3300032: shelf
-    3300034: shelf_decoration_1
-    3300036: shelf_decoration_2
-    3300038: shelf_decoration_3
-    3300040: shelf_decoration_4
-    3300042: shelf_decoration_5
-    3300044: shelf_decoration_6
-    3300046: sold_painting_1
-    3300048: sold_painting_2
-    3300050: sold_painting_3
-    3300052: sold_painting_4
-    3300054: sold_painting_5
-    3300056: sold_painting_6
-    3300058: sold_painting_7
-    3300060: sold_painting_8
-    3300062: sold_painting_label_1
-    3300064: sold_painting_label_2
-    3300066: sold_painting_label_3
-    3300068: sold_painting_label_4
-    3300070: sold_painting_label_5
-    3300072: sold_painting_label_6
-    3300074: sold_painting_label_7
-    3300076: sold_painting_label_8
-    3300078: stool
-    3300080: vase_decoration
+    3300024: pCube1
+    3300026: potted_plant
+    3300028: reference_image
+    3300030: room_base
+    3300032: sale_desk
+    3300034: shelf
+    3300036: shelf_decoration_1
+    3300038: shelf_decoration_2
+    3300040: shelf_decoration_3
+    3300042: shelf_decoration_4
+    3300044: shelf_decoration_5
+    3300046: shelf_decoration_6
+    3300048: sold_painting_1
+    3300050: sold_painting_2
+    3300052: sold_painting_3
+    3300054: sold_painting_4
+    3300056: sold_painting_5
+    3300058: sold_painting_6
+    3300060: sold_painting_7
+    3300062: sold_painting_8
+    3300064: sold_painting_label_1
+    3300066: sold_painting_label_2
+    3300068: sold_painting_label_3
+    3300070: sold_painting_label_4
+    3300072: sold_painting_label_5
+    3300074: sold_painting_label_6
+    3300076: sold_painting_label_7
+    3300078: sold_painting_label_8
+    3300080: stool
+    3300082: vase_decoration
     4300000: canvas_placeholder
     4300002: art_desk
     4300004: drawer_set
@@ -221,6 +247,7 @@ ModelImporter:
     4300076: sold_painting_2
     4300078: room_base
     4300080: door
+    4300082: pCube1
     9500000: //RootNode
   externalObjects: {}
   materials:

@@ -13,42 +13,42 @@ public class ColorChange : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown("[1]"))
+        if (Input.GetKeyDown("[2]"))
         {
             myColor = Color.white;
         }
 
-        if (Input.GetKeyDown("[2]"))
+        if (Input.GetKeyDown("[1]"))
         {
             myColor = Color.black;
         }
 
-        if (Input.GetKeyDown("[3]"))
+        if (Input.GetKeyDown("[5]"))
         {
             myColor = Color.yellow;
         }
 
-        if (Input.GetKeyDown("[4]"))
+        if (Input.GetKeyDown("[6]"))
         {
             myColor = Color.green;
         }
 
-        if (Input.GetKeyDown("[5]"))
+        if (Input.GetKeyDown("[7]"))
         {
             myColor = Color.blue;
         }
 
-        if (Input.GetKeyDown("[6]"))
+        if (Input.GetKeyDown("[3]"))
         {
             myColor = Color.red;
         }
 
-        if (Input.GetKeyDown("[7]"))
+        if (Input.GetKeyDown("[4]"))
         {
-            myColor = Color.gray;
+            myColor = Color.grey;
         }
 
-        if (Input.GetKeyDown("[7]"))
+        if (Input.GetKeyDown("[8]"))
         {
             myColor = new Color(0.647f, 0.165f, 0.165f);
         }
