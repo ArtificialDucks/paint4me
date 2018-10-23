@@ -5,9 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Misc/StartupMenu.unity
     guid: da611bf8976f0ad4ba902c2bb68ab3b1
   - enabled: 1
     path: Assets/Painting Keys and Script/PrototypeScene.unity
     guid: e155ade9954d39643aabf8f09d705619
+  m_configObjects: {}

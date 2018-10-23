@@ -61,8 +61,8 @@ public class PuzzleController : MonoBehaviour {
 		//score.text = "Score: " + counter.ToString ();
 		if (solvedCheck) {
 			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
-			earned.money = counter * 100;
-			money.text = "$ " + earned.ToString ();
+			earned.cash = counter * 100;
+			money.text = "$ " + earned.cash.ToString ();
 			timerRunning = true;
 		} else { 
 			if (counter == 0) solved.text = "Judging Commissioner:\nI look forward to your finished work.";

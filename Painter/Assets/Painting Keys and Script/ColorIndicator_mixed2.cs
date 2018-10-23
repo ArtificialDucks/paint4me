@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ColorIndicator : MonoBehaviour {
+public class ColorIndicator_mixed2 : MonoBehaviour {
 
 	public ColorChange color;
 	private Graphic r;

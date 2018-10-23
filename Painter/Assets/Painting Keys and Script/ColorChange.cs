@@ -83,8 +83,8 @@ public class ColorChange : MonoBehaviour {
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
-                    TempColorR = new Color(0.100f, 0.0f, 0.0f, 1.0f);
-                    TempColorB = new Color(0.0f, 0.0f, 0.100f, 1.0f);
+                    TempColorR = new Color(0.1f, 0.0f, 0.0f);
+                    TempColorB = new Color(0.0f, 0.0f, 0.1f);
                 }
                 
                 //mixing with numpad
@@ -108,7 +108,7 @@ public class ColorChange : MonoBehaviour {
                        //}
                     }
                 }
-                //myColor = new Color32(255, 0, 255, 1);
+                //myColor = new Color32(255, 0, 255, 255);
                 //put color into the first used slot between f3/f4
                 if (f3Filled == false)
                 {
@@ -136,7 +136,7 @@ public class ColorChange : MonoBehaviour {
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
-                    TempColorG = new Color(0.0f, 0.100f, 0.0f, 1.0f);
+                    TempColorG = new Color(0.0f, 0.1f, 0.0f);
                 }
 
                 //mixing with numpad
@@ -152,7 +152,7 @@ public class ColorChange : MonoBehaviour {
                         //}
                     }
                 }
-                //myColor = new Color32(255, 0, 255, 1);
+                //myColor = new Color32(255, 0, 255, 255);
                 //put color into the first used slot between f3/f4
                 if (f3Filled == false)
                 {
@@ -179,8 +179,8 @@ public class ColorChange : MonoBehaviour {
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
-                    TempColorR = new Color(0.100f, 0.0f, 0.0f, 1.0f);
-                    TempColorG = new Color(0.0f, 0.100f, 0.0f, 1.0f);
+                    TempColorR = new Color(0.1f, 0.0f, 0.0f);
+                    TempColorG = new Color(0.0f, 0.1f, 0.0f);
                 }
 
                 //mixing with numpad
