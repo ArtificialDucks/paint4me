@@ -9,13 +9,16 @@ public class PuzzleController : MonoBehaviour {
 	//public ScoreDisplay scoreObj; //GUI Score
 	public Text score;
 	public Text solved;
+	public Text timer;
+	public Text money;
+	public Money earned;
 	public Puzzle[] puzzles; //Required points for Solved
 
 	private int counter;
 	private bool solvedCheck;
 	public float targetTime = 30.0f;
 	public swapPaintings swap;
-	private bool timerRunning = false;
+	public bool timerRunning = false;
 	void Start ()
 	{
 		solvedCheck = false;
@@ -24,7 +27,11 @@ public class PuzzleController : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (timerRunning) targetTime -= Time.deltaTime;
+		if (timerRunning) {
+			targetTime -= Time.deltaTime;
+			timer.text = "Time Remaining: " + targetTime.ToString("##");
+		} else
+			timer.text = "";
 
 		if (targetTime <= 0.0f)
 		{
@@ -51,9 +58,11 @@ public class PuzzleController : MonoBehaviour {
 	}
 
 	void ScoreUpdate () {
-		score.text = "Score: " + counter.ToString ();
+		//score.text = "Score: " + counter.ToString ();
 		if (solvedCheck) {
 			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
+			earned.money = counter * 100;
+			money.text = "$ " + earned.ToString ();
 			timerRunning = true;
 		} else { 
 			if (counter == 0) solved.text = "Judging Commissioner:\nI look forward to your finished work.";

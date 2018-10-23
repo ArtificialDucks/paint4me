@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneTimer : MonoBehaviour {
 
-	public float targetTime = 30.0f;
+	public float targetTime = 60.0f;
 	public swapPaintings swap;
+	public bool timerRunning = true;
+	public Text timer;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +17,11 @@ public class SceneTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		targetTime -= Time.deltaTime;
+		if (timerRunning) {
+			targetTime -= Time.deltaTime;
+			timer.text = "Time Remaining: " + targetTime.ToString("##");
+		} else
+			timer.text = "";
 
 		if (targetTime <= 0.0f)
 		{

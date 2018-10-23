@@ -24,12 +24,12 @@ public class ColorChange : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.F1))
             {
-                myColor = new Color32(0, 0, 0, 1);
+                myColor = new Color32(0, 0, 0, 255);
             }
 
             if (Input.GetKeyDown(KeyCode.F2))
             {
-                myColor = new Color32(255, 255, 255, 1);
+                myColor = new Color32(255, 255, 255, 255);
             }
 
             if (Input.GetKeyDown(KeyCode.F3))
@@ -44,17 +44,17 @@ public class ColorChange : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.F5))
             {
-                myColor = new Color32(255, 0, 0, 1);
+                myColor = new Color32(255, 0, 0, 255);
             }
 
             if (Input.GetKeyDown(KeyCode.F6))
             {
-                myColor = new Color32(255, 255, 0, 1);
+                myColor = new Color32(255, 255, 0, 255);
             }
 
             if (Input.GetKeyDown(KeyCode.F7))
             {
-                myColor = new Color32(0, 0, 255, 1);
+                myColor = new Color32(0, 0, 255, 255);
             }
 
             if (Input.GetKeyDown(KeyCode.F8))
@@ -80,7 +80,7 @@ public class ColorChange : MonoBehaviour {
             {
                 if (BothColorsPicked = true && ChangeCount == 1)
                 {
-                    myColor = new Color(0.0f, 0.0f, 0.0f, 1);
+                    myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
                     TempColorR = new Color(0.100f, 0.0f, 0.0f, 1.0f);
@@ -133,7 +133,7 @@ public class ColorChange : MonoBehaviour {
             {
                 if (BothColorsPicked = true && ChangeCount == 1)
                 {
-                    myColor = new Color(0.0f, 0.0f, 0.0f, 1);
+                    myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
                     TempColorG = new Color(0.0f, 0.100f, 0.0f, 1.0f);
@@ -176,7 +176,7 @@ public class ColorChange : MonoBehaviour {
             {
                 if (BothColorsPicked = true && ChangeCount == 1)
                 {
-                    myColor = new Color(0.0f, 0.0f, 0.0f, 1);
+                    myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
                     TempColorR = new Color(0.100f, 0.0f, 0.0f, 1.0f);
