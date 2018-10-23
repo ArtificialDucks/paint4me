@@ -1125,6 +1125,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 35386688}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &37783643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 37783644}
+  m_Layer: 0
+  m_Name: Full workshop View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &37783644
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 37783643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.58, y: 3.25, z: -31.67}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &37985374
 GameObject:
   m_ObjectHideFlags: 0
@@ -6511,6 +6539,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 250851428}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &275068475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 275068476}
+  m_Layer: 0
+  m_Name: Camera Start Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275068476
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275068475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.78, y: 3.05, z: 2.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &275373260 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4844982487403918, guid: f2eb814d105dbe74086e52f03bdee77c,
@@ -17624,6 +17680,34 @@ Transform:
   m_Father: {fileID: 446523611}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: -13.366, y: -48.557003, z: 14.173}
+--- !u!1 &741017010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 741017011}
+  m_Layer: 0
+  m_Name: Full Canvas View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741017011
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 741017010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: 3.77, z: -4.69}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &747694389
 GameObject:
   m_ObjectHideFlags: 0
@@ -45059,6 +45143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myColor: {r: 0, g: 0, b: 0, a: 0}
+  Mixed1: {r: 0, g: 0, b: 0, a: 0}
+  Mixed2: {r: 0, g: 0, b: 0, a: 0}
+  TempColorR: {r: 0, g: 0, b: 0, a: 0}
+  TempColorG: {r: 0, g: 0, b: 0, a: 0}
+  TempColorB: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1903874239
 Transform:
   m_ObjectHideFlags: 0
@@ -45950,7 +46039,12 @@ MonoBehaviour:
   - {fileID: 686414198}
   - {fileID: 896722100}
   - {fileID: 1546161908}
+  ScrollWheelLocations:
+  - {fileID: 275068475}
+  - {fileID: 741017010}
+  - {fileID: 37783643}
   speed: 2
+  CanZoom: 0
   CurrentPainting: 0
 --- !u!1 &1958618539
 GameObject:
