@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class scoreBlock : Puzzle {
 
-	public Color matchColor;
+	public Color inputColor;
+	private Color matchColor;
 	private MeshRenderer r;
 	private int count;
 	// Use this for initialization
 	void Start () {
 		r = GetComponent<MeshRenderer> ();
+		matchColor = new Color32(inputColor[0], inputColor[1], inputColor[2], inputColor[3]);
 		count = 0;
 	}
 	
