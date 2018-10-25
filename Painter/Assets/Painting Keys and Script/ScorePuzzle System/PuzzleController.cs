@@ -12,15 +12,19 @@ public class PuzzleController : MonoBehaviour {
 	public Text timer;
 	public Text money;
 	public Money earned;
+	private bool cashcheck = false;
+	private bool unsolved = true;
+
 	public Puzzle[] puzzles; //Required points for Solved
 
 	private int counter;
 	private bool solvedCheck;
 	public float targetTime = 30.0f;
-	public swapPaintings swap;
+	public GameObject completeScr;
 	public bool timerRunning = false;
 	void Start ()
 	{
+		completeScr.SetActive(false);
 		solvedCheck = false;
 		counter = 0;
 		ScoreUpdate ();
@@ -29,7 +33,7 @@ public class PuzzleController : MonoBehaviour {
 	void Update () {
 		if (timerRunning) {
 			targetTime -= Time.deltaTime;
-			timer.text = "Time Remaining: " + targetTime.ToString("##");
+			timer.text = "Time: " + targetTime.ToString("##");
 		} else
 			timer.text = "";
 
@@ -50,8 +54,10 @@ public class PuzzleController : MonoBehaviour {
 		}
 
 		//If optimal score is reached, image is "solved"
-		if (counter == puzzles.Length) {
+		if (counter == puzzles.Length && unsolved) {
+			unsolved = false;
 			solvedCheck = true;
+			cashcheck = true;
 		}
 
 		ScoreUpdate ();
@@ -61,7 +67,10 @@ public class PuzzleController : MonoBehaviour {
 		//score.text = "Score: " + counter.ToString ();
 		if (solvedCheck) {
 			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
-			earned.cash = counter * 100;
+			if (cashcheck) {
+				cashcheck = false;
+				earned.cash += counter * 100;
+			}
 			money.text = "$ " + earned.cash.ToString ();
 			timerRunning = true;
 		} else { 
@@ -75,7 +84,7 @@ public class PuzzleController : MonoBehaviour {
 	}
 	void timerEnded()
 	{
-		targetTime = 30.0f;
-		swap.Next ();
+		//targetTime = 30.0f;
+		completeScr.SetActive(true);
 	}
 }

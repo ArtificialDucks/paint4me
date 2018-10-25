@@ -19,7 +19,7 @@ public class SceneTimer : MonoBehaviour {
 	void Update () {
 		if (timerRunning) {
 			targetTime -= Time.deltaTime;
-			timer.text = "Time Remaining: " + targetTime.ToString("##");
+			timer.text = "Time: " + targetTime.ToString("##");
 		} else
 			timer.text = "";
 
