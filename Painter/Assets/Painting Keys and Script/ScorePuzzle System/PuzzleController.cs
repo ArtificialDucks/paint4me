@@ -14,6 +14,7 @@ public class PuzzleController : MonoBehaviour {
 	public Money earned;
 	private bool cashcheck = false;
 	private bool unsolved = true;
+	private bool complete = false;
 
 	public Puzzle[] puzzles; //Required points for Solved
 
@@ -84,7 +85,10 @@ public class PuzzleController : MonoBehaviour {
 	}
 	void timerEnded()
 	{
-		//targetTime = 30.0f;
-		completeScr.SetActive(true);
+		timerRunning = false;
+		if (!complete) {
+			complete = true;
+			completeScr.SetActive (true);
+		}
 	}
 }
