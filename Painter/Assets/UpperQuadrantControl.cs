@@ -13,11 +13,22 @@ public class UpperQuadrantControl : MonoBehaviour {
     public List<GameObject> Quadrant7 = new List<GameObject>();
     public List<GameObject> Quadrant8 = new List<GameObject>();
     public List<GameObject> Quadrant9 = new List<GameObject>();
+	
+	public GameObject ind1;
+	public GameObject ind2;
+	public GameObject ind3;
+	public GameObject ind4;
+	
     PaintingCore paint;
     //need to know which quadrants are empty
     public bool q1 = true, q2 = true, q3 = true, q4 = true, q5 = true, q6 = true, q7 = true, q8 = true, q9 = true;
     // Use this for initialization
     void Start () {
+		ind1.SetActive(false);
+		ind2.SetActive(false);
+		ind3.SetActive(false);
+		ind4.SetActive(false);
+		
       if (Quadrant1.Count > 0) q1 = true;
       else q1 = false;
       
@@ -101,6 +112,11 @@ public class UpperQuadrantControl : MonoBehaviour {
     {
         if (q1 == true)
         {
+			ind1.SetActive(true);
+			ind2.SetActive(false);
+			ind3.SetActive(false);
+			ind4.SetActive(false);
+			
             for (int i = 0; i < Quadrant4.Count; i++)
             {
                 if (q1 == true)
@@ -158,6 +174,11 @@ public class UpperQuadrantControl : MonoBehaviour {
     {
         if (q2 == true)
         {
+			ind1.SetActive(false);
+			ind2.SetActive(true);
+			ind3.SetActive(false);
+			ind4.SetActive(false);
+			
             for (int i = 0; i < Quadrant4.Count; i++)
             {
                 if (q1 == true)
@@ -273,6 +294,11 @@ public class UpperQuadrantControl : MonoBehaviour {
     {
         if (q4 == true)
         {
+			ind1.SetActive(false);
+			ind2.SetActive(false);
+			ind3.SetActive(true);
+			ind4.SetActive(false);
+			
             for (int i = 0; i < Quadrant4.Count; i++)
             {
                 if (q1 == true)
@@ -330,6 +356,11 @@ public class UpperQuadrantControl : MonoBehaviour {
     {
         if (q5 == true)
         {
+			ind1.SetActive(false);
+			ind2.SetActive(false);
+			ind3.SetActive(false);
+			ind4.SetActive(true);
+		
             for (int i = 0; i < Quadrant4.Count; i++)
             {
                 if (q1 == true)
