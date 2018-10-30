@@ -92,7 +92,7 @@ public class CameraChange : MonoBehaviour {
                 ActivateQuadrant(pos.QuadValue);
             }
         }
-        transform.position = Vector3.MoveTowards(transform.position, EndLocation.position, step*3.0f);
+        transform.position = Vector3.MoveTowards(transform.position, EndLocation.position, step*6.0f);
     }
 
     void ActivateQuadrant(int val)
