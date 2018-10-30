@@ -94,39 +94,12 @@ public class ColorChange : MonoBehaviour {
                     if (myColor.r < 0.490f)
                     {
                         myColor += TempColorR;
-                        //if (myColor.r > 0.490f)
-                        //{
-                        //    myColor.r = 0.490f;
-                        //}
                     }
                     if (myColor.b < 1.0f)
                     {
                         myColor += TempColorB;
-                       //if (myColor.b > 1.0f)
-                       //{
-                       //    myColor.b = 1.0f;
-                       //}
                     }
                 }
-                //myColor = new Color32(255, 0, 255, 255);
-                //put color into the first used slot between f3/f4
-                if (f3Filled == false)
-                {
-                    Mixed1 = myColor;
-                    f3Filled = true;
-                }
-                else if (f3Filled == true && f4Filled == true)
-                {
-                    Mixed1 = myColor;
-                }
-                else
-                {
-                    Mixed2 = myColor;
-                    f4Filled = true;
-                }
-                //ReinitializeVars();
-                //Debug.Log("should now be purple");
-                //Debug.Log(myColor);
             }
             //mixing green
             else if (BlueMix == true && YellowMix == true)
@@ -146,31 +119,9 @@ public class ColorChange : MonoBehaviour {
                     if (myColor.g < 0.60f)
                     {
                         myColor += TempColorG;
-                        //if (myColor.r > 0.60f)
-                        //{
-                        //    myColor.r = 0.60f;
-                        //}
+
                     }
                 }
-                //myColor = new Color32(255, 0, 255, 255);
-                //put color into the first used slot between f3/f4
-                if (f3Filled == false)
-                {
-                    Mixed1 = myColor;
-                    f3Filled = true;
-                }
-                else if (f3Filled == true && f4Filled == true)
-                {
-                    Mixed1 = myColor;
-                }
-                else
-                {
-                    Mixed2 = myColor;
-                    f4Filled = true;
-                }
-                //ReinitializeVars();
-                //Debug.Log("should now be purple");
-                //Debug.Log(myColor);
             }
             else if (YellowMix == true && RedMix == true)
             {
@@ -190,39 +141,12 @@ public class ColorChange : MonoBehaviour {
                     if (myColor.r < 1.0f)
                     {
                         myColor += TempColorR;
-                        //if (myColor.r > 1.0f)
-                        //{
-                        //    myColor.r = 1.0f;
-                        //}
                     }
                     if (myColor.g < 0.5f)
                     {
                         myColor += TempColorG;
-                        //if (myColor.g > 0.5f)
-                        //{
-                        //    myColor.g = 0.5f;
-                        //}
                     }
                 }
-                //myColor = new Color32(255, 0, 255, 1);
-                //put color into the first used slot between f3/f4
-                if (f3Filled == false)
-                {
-                    Mixed1 = myColor;
-                    f3Filled = true;
-                }
-                else if (f3Filled == true && f4Filled == true)
-                {
-                    Mixed1 = myColor;
-                }
-                else
-                {
-                    Mixed2 = myColor;
-                    f4Filled = true;
-                }
-                //ReinitializeVars();
-                //Debug.Log("should now be purple");
-                //Debug.Log(myColor);
             }
             else if (Input.GetKeyDown(KeyCode.F7))
             {
@@ -244,7 +168,21 @@ public class ColorChange : MonoBehaviour {
 
         if (Input.GetKeyDown("[0]"))
         {
-            //ReinitializeVars();
+            if (f3Filled == false)
+            {
+                Mixed1 = myColor;
+                f3Filled = true;
+            }
+            else if (f3Filled == true && f4Filled == true)
+            {
+                Mixed1 = myColor;
+                f4Filled = false;
+            }
+            else
+            {
+                Mixed2 = myColor;
+                f4Filled = true;
+            }
             ReinitializeVars();
             //Debug.Log("Reset vars now");
         }
