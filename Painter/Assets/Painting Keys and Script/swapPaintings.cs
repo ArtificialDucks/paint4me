@@ -11,6 +11,7 @@ public class swapPaintings : MonoBehaviour {
     //need camera script to warn after painting change
     public GameObject cam;
 	public GameObject completeScr;
+	public GameObject soldSticker;
     CameraChange CamChange;
 
     // Use this for initialization
@@ -50,6 +51,7 @@ public class swapPaintings : MonoBehaviour {
 			gList [currObj].SetActive (false);
 			gList [currObj + 1].SetActive (true);
 			completeScr.SetActive(false);
+			soldSticker.SetActive(false);
 			currObj++;
 			CamChange.CurrentPainting++;
 		}
@@ -61,6 +63,7 @@ public class swapPaintings : MonoBehaviour {
 			gList [currObj].SetActive (false);
 			gList [currObj - 1].SetActive (true);
 			completeScr.SetActive(false);
+			soldSticker.SetActive(false);
 			currObj--;
 			CamChange.CurrentPainting--;
 		}

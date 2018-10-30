@@ -20,15 +20,23 @@ public class PuzzleController : MonoBehaviour {
 
 	private int counter;
 	private bool solvedCheck;
-	public float targetTime = 30.0f;
+	public float targetTime = 60.0f;
 	public GameObject completeScr;
+	public GameObject soldSticker;
 	public bool timerRunning = false;
+
+	public AudioSource audiosrc;
+	public AudioClip tone;
+
 	void Start ()
 	{
+		soldSticker.SetActive (false);
 		completeScr.SetActive(false);
 		solvedCheck = false;
 		counter = 0;
+		audiosrc = GetComponent<AudioSource> ();
 		ScoreUpdate ();
+		timerRunning = true;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -40,7 +48,10 @@ public class PuzzleController : MonoBehaviour {
 
 		if (targetTime <= 0.0f)
 		{
-			timerEnded();
+			if (solvedCheck)
+				timerEnded ();
+			else
+				incomplete ();
 		}
 		counter = 0;
 
@@ -67,10 +78,13 @@ public class PuzzleController : MonoBehaviour {
 	void ScoreUpdate () {
 		//score.text = "Score: " + counter.ToString ();
 		if (solvedCheck) {
+			timerRunning = false;
 			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
+			soldSticker.SetActive (true);
 			if (cashcheck) {
 				cashcheck = false;
 				earned.cash += counter * 100;
+				targetTime = 10.0f;
 			}
 			money.text = "$ " + earned.cash.ToString ();
 			timerRunning = true;
@@ -86,9 +100,23 @@ public class PuzzleController : MonoBehaviour {
 	void timerEnded()
 	{
 		timerRunning = false;
-		if (!complete) {
+		if (solvedCheck && !complete) {
 			complete = true;
+			audiosrc.PlayOneShot (tone, 1.0f);
 			completeScr.SetActive (true);
 		}
+	}
+	void incomplete()
+	{
+		timerRunning = false;
+		solved.text = "Judging Commissioner:\nHmm... it's not quite what I was hoping for, but it'll do.";
+		soldSticker.SetActive (true);
+		if (cashcheck) {
+			cashcheck = false;
+			earned.cash += counter * 100;
+			targetTime = 10.0f;
+		}
+		money.text = "$ " + earned.cash.ToString ();
+		timerRunning = true;
 	}
 }

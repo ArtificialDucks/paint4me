@@ -7,6 +7,9 @@ public class ColorChange : MonoBehaviour {
     public Color myColor, Mixed1, Mixed2, TempColorR, TempColorG, TempColorB;
     private int ColorCount, ChangeCount;
     private bool ColorMix, BothColorsPicked, RedMix, BlueMix, YellowMix, f3Filled, f4Filled;
+
+	public AudioSource audiosrc;
+	public AudioClip swish;
     // Use this for initialization
     void Start () {
         myColor = Color.white;
@@ -16,6 +19,8 @@ public class ColorChange : MonoBehaviour {
         f4Filled = false;
         BothColorsPicked = false;
         ChangeCount = 1;
+
+		audiosrc = GetComponent<AudioSource> ();
     }
 	
 	// Update is called once per frame
@@ -25,42 +30,50 @@ public class ColorChange : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.F1))
             {
                 myColor = new Color32(0, 0, 0, 255);
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
 
             if (Input.GetKeyDown(KeyCode.F2))
             {
-                myColor = new Color32(255, 255, 255, 255);
+				myColor = new Color32(255, 255, 255, 255);
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
 
             if (Input.GetKeyDown(KeyCode.F3))
             {
-                myColor = Mixed1;
+				myColor = Mixed1;
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
 
             if (Input.GetKeyDown(KeyCode.F4))
             {
-                myColor = Mixed2;
+				myColor = Mixed2;
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
 
             if (Input.GetKeyDown(KeyCode.F5))
             {
-                myColor = new Color32(255, 0, 0, 255);
+				myColor = new Color32(255, 0, 0, 255);
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
 
             if (Input.GetKeyDown(KeyCode.F6))
             {
-                myColor = new Color32(255, 255, 0, 255);
+				myColor = new Color32(255, 255, 0, 255);
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
 
             if (Input.GetKeyDown(KeyCode.F7))
             {
-                myColor = new Color32(0, 0, 255, 255);
+				myColor = new Color32(0, 0, 255, 255);
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
 
             if (Input.GetKeyDown(KeyCode.F8))
             {
                 //brown
-                myColor = new Color(0.647f, 0.165f, 0.165f, 1.0f);
+				myColor = new Color(0.647f, 0.165f, 0.165f, 1.0f);
+				audiosrc.PlayOneShot (swish, 1.0f);
             }
         }
         //activate color mix mode
