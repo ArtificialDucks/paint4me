@@ -13,8 +13,9 @@ public class UpperQuadrantControl : MonoBehaviour {
     public List<GameObject> Quadrant7 = new List<GameObject>();
     public List<GameObject> Quadrant8 = new List<GameObject>();
     public List<GameObject> Quadrant9 = new List<GameObject>();
-	
-	public GameObject ind1;
+
+    //public List<GameObject> Highlights = new List<GameObject>();
+    public GameObject ind1;
 	public GameObject ind2;
 	public GameObject ind3;
 	public GameObject ind4;
@@ -26,7 +27,7 @@ public class UpperQuadrantControl : MonoBehaviour {
     void Start () {
 		ind1.SetActive(false);
 		ind2.SetActive(false);
-		ind3.SetActive(false);
+		ind3.SetActive(true);
 		ind4.SetActive(false);
 		
       if (Quadrant1.Count > 0) q1 = true;
