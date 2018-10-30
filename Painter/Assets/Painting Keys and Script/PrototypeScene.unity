@@ -38813,7 +38813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82e353608349894aa69dfb23080762f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 60
+  targetTime: 70
   swap: {fileID: 988057001}
   timerRunning: 1
   timer: {fileID: 463539703}
