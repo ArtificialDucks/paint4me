@@ -48,10 +48,15 @@ public class PuzzleController : MonoBehaviour {
 
 		if (targetTime <= 0.0f)
 		{
-			if (solvedCheck)
+			timer.text = "";
+			if (solvedCheck) {
+				timerRunning = false;
 				timerEnded ();
-			else
-				incomplete ();
+			}
+			else {
+				solvedCheck = true;
+				cashcheck = true;
+			}
 		}
 		counter = 0;
 
@@ -77,7 +82,7 @@ public class PuzzleController : MonoBehaviour {
 
 	void ScoreUpdate () {
 		//score.text = "Score: " + counter.ToString ();
-		if (solvedCheck) {
+		if (solvedCheck && !unsolved) {
 			timerRunning = false;
 			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
 			soldSticker.SetActive (true);
@@ -88,7 +93,19 @@ public class PuzzleController : MonoBehaviour {
 			}
 			money.text = "$ " + earned.cash.ToString ();
 			timerRunning = true;
-		} else { 
+		} else if (solvedCheck && unsolved) {
+			timerRunning = false;
+			solved.text = "Judging Commissioner:\nHmm... it's not quite what I was hoping for, but it'll do.";
+			soldSticker.SetActive (true);
+			if (cashcheck) {
+				cashcheck = false;
+				earned.cash += counter * 100;
+				targetTime = 10.0f;
+			}
+			money.text = "$ " + earned.cash.ToString ();
+			timerRunning = true;
+		}
+		else { 
 			if (counter == 0) solved.text = "Judging Commissioner:\nI look forward to your finished work.";
 			else if (counter == 1) solved.text = "Judging Commissioner:\nIt's coming along I see.";
 			else if (counter == 2) solved.text = "Judging Commissioner:\nReally shaping up now.";
@@ -99,24 +116,11 @@ public class PuzzleController : MonoBehaviour {
 	}
 	void timerEnded()
 	{
-		timerRunning = false;
 		if (solvedCheck && !complete) {
 			complete = true;
 			audiosrc.PlayOneShot (tone, 1.0f);
 			completeScr.SetActive (true);
+			timerRunning = false;
 		}
-	}
-	void incomplete()
-	{
-		timerRunning = false;
-		solved.text = "Judging Commissioner:\nHmm... it's not quite what I was hoping for, but it'll do.";
-		soldSticker.SetActive (true);
-		if (cashcheck) {
-			cashcheck = false;
-			earned.cash += counter * 100;
-			targetTime = 10.0f;
-		}
-		money.text = "$ " + earned.cash.ToString ();
-		timerRunning = true;
 	}
 }
