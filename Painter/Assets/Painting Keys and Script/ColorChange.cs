@@ -79,7 +79,12 @@ public class ColorChange : MonoBehaviour {
         //activate color mix mode
         if (Input.GetKeyDown("[+]"))
         {
-            if (ColorMix == false)
+            if (ColorMix == true)
+            {
+                FinishMix();
+                ColorMix = false;
+            }
+            else if (ColorMix == false)
             {
                 //Debug.Log("color mix now true");
                 ColorMix = true;
@@ -178,27 +183,28 @@ public class ColorChange : MonoBehaviour {
                 RedMix = true;
             }
         }
+    }
 
-        if (Input.GetKeyDown("[0]"))
+    void FinishMix()
+    {
+        if (f3Filled == false)
         {
-            if (f3Filled == false)
-            {
-                Mixed1 = myColor;
-                f3Filled = true;
-            }
-            else if (f3Filled == true && f4Filled == true)
-            {
-                Mixed1 = myColor;
-                f4Filled = false;
-            }
-            else
-            {
-                Mixed2 = myColor;
-                f4Filled = true;
-            }
-            ReinitializeVars();
-            //Debug.Log("Reset vars now");
+            Mixed1 = myColor;
+            f3Filled = true;
         }
+        else if (f3Filled == true && f4Filled == true)
+        {
+            Mixed1 = myColor;
+            f4Filled = false;
+        }
+        else
+        {
+            Mixed2 = myColor;
+            f4Filled = true;
+        }
+        ReinitializeVars();
+        //Debug.Log("Reset vars now");
+        
     }
 
     void ReinitializeVars()
