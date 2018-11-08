@@ -16,6 +16,9 @@ public class CameraChange : MonoBehaviour {
     private float step;
     private Transform EndLocation;
     private int ScrollLocation;
+    private float CameraSpeed;
+
+    public GameObject Client;
     
     //control whether mouse can scroll or not
     public bool CanZoom;
@@ -29,6 +32,7 @@ public class CameraChange : MonoBehaviour {
         QuadScript = QuadrantControllers[CurrentPainting].GetComponent<UpperQuadrantControl>();
         ScrollLocation = 0;
         CanZoom = true;
+        CameraSpeed = 6.0f;
 	}
 	
 	// Update is called once per frame
@@ -42,12 +46,14 @@ public class CameraChange : MonoBehaviour {
             {
                 if (ScrollLocation > 0) ScrollLocation--;
                 EndLocation.position = ScrollWheelLocations[ScrollLocation].transform.position;
+                Client.SetActive(false);
             }
             //scroll down
             else if (d < 0f)
             {
                 if (ScrollLocation <= 1) ScrollLocation++;
                 EndLocation.position = ScrollWheelLocations[ScrollLocation].transform.position;
+                Client.SetActive(true);
             }
         }
         
@@ -92,7 +98,7 @@ public class CameraChange : MonoBehaviour {
                 ActivateQuadrant(pos.QuadValue);
             }
         }
-        transform.position = Vector3.MoveTowards(transform.position, EndLocation.position, step*6.0f);
+        transform.position = Vector3.MoveTowards(transform.position, EndLocation.position, step*CameraSpeed);
     }
 
     void ActivateQuadrant(int val)
