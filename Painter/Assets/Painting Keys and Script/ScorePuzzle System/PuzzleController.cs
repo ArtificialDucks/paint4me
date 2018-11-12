@@ -20,7 +20,7 @@ public class PuzzleController : MonoBehaviour {
 
 	private int counter;
 	private bool solvedCheck;
-	public float targetTime = 60.0f;
+	public float targetTime = 0.1f;
 	public GameObject completeScr;
 	public GameObject soldSticker;
 	public bool timerRunning = false;
@@ -32,6 +32,8 @@ public class PuzzleController : MonoBehaviour {
 	{
 		soldSticker.SetActive (false);
 		completeScr.SetActive(false);
+
+		cashcheck = true;
 		solvedCheck = false;
 		counter = 0;
 		audiosrc = GetComponent<AudioSource> ();
@@ -40,10 +42,14 @@ public class PuzzleController : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (timerRunning) {
+		if (timerRunning && solvedCheck) {
 			targetTime -= Time.deltaTime;
-			timer.text = "Time: " + targetTime.ToString("##");
-		} else
+			timer.text = "Time: " + targetTime.ToString ("##");
+		} else if (timerRunning && !solvedCheck) {
+			targetTime += Time.deltaTime;
+			timer.text = "Time: " + targetTime.ToString ("##");
+		}
+		else
 			timer.text = "";
 
 		if (targetTime <= 0.0f)
@@ -52,10 +58,6 @@ public class PuzzleController : MonoBehaviour {
 			if (solvedCheck) {
 				timerRunning = false;
 				timerEnded ();
-			}
-			else {
-				solvedCheck = true;
-				cashcheck = true;
 			}
 		}
 		counter = 0;
@@ -73,8 +75,6 @@ public class PuzzleController : MonoBehaviour {
 		//If optimal score is reached, image is "solved"
 		if (counter == puzzles.Length && unsolved) {
 			unsolved = false;
-			solvedCheck = true;
-			cashcheck = true;
 		}
 
 		ScoreUpdate ();
@@ -122,5 +122,9 @@ public class PuzzleController : MonoBehaviour {
 			completeScr.SetActive (true);
 			timerRunning = false;
 		}
+	}
+	public void PlayerSubmit()
+	{
+		solvedCheck = true;
 	}
 }

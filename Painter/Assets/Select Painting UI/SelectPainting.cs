@@ -24,7 +24,7 @@ public class SelectPainting : MonoBehaviour {
 		
 	}
 
-    void OnMouseDown()
+    public void Clicked()
     {
         if (CurrentReputation >= RepRequirement && CurrentMoney >= MoneyRequirement)
         {

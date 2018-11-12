@@ -31,7 +31,6 @@ public class SceneTimer : MonoBehaviour {
 
 	void timerEnded()
 	{
-		targetTime = 30.0f;
-		swap.Next ();
+		//swap.Next ();
 	}
 }

@@ -8,6 +8,13 @@ public class ColorChange : MonoBehaviour {
     private int ColorCount, ChangeCount;
     private bool ColorMix, BothColorsPicked, RedMix, BlueMix, YellowMix, f3Filled, f4Filled;
 
+	public GameObject mix_strt;
+	public GameObject mix_red;
+	public GameObject mix_yel;
+	public GameObject mix_blu;
+	public GameObject mix_kp;
+	public GameObject mix_end;
+
 	public AudioSource audiosrc;
 	public AudioClip swish;
     // Use this for initialization
@@ -82,11 +89,18 @@ public class ColorChange : MonoBehaviour {
             if (ColorMix == true)
             {
                 FinishMix();
+				mix_strt.SetActive(true);
+				mix_kp.SetActive(false);
+				mix_end.SetActive(false);
                 ColorMix = false;
             }
             else if (ColorMix == false)
             {
-                //Debug.Log("color mix now true");
+				//Debug.Log("color mix now true");
+				mix_strt.SetActive(false);
+				mix_red.SetActive(true);
+				mix_yel.SetActive(true);
+				mix_blu.SetActive(true);
                 ColorMix = true;
             } 
         }
@@ -97,7 +111,10 @@ public class ColorChange : MonoBehaviour {
             if (BlueMix == true && RedMix == true)
             {
                 if (BothColorsPicked = true && ChangeCount == 1)
-                {
+				{
+					mix_yel.SetActive(false);
+					mix_kp.SetActive(true);
+					mix_end.SetActive(true);
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
@@ -123,7 +140,10 @@ public class ColorChange : MonoBehaviour {
             else if (BlueMix == true && YellowMix == true)
             {
                 if (BothColorsPicked = true && ChangeCount == 1)
-                {
+				{
+					mix_red.SetActive(false);
+					mix_kp.SetActive(true);
+					mix_end.SetActive(true);
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
@@ -144,7 +164,10 @@ public class ColorChange : MonoBehaviour {
             else if (YellowMix == true && RedMix == true)
             {
                 if (BothColorsPicked = true && ChangeCount == 1)
-                {
+				{
+					mix_blu.SetActive(false);
+					mix_kp.SetActive(true);
+					mix_end.SetActive(true);
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
@@ -167,19 +190,22 @@ public class ColorChange : MonoBehaviour {
                 }
             }
             else if (Input.GetKeyDown(KeyCode.F7))
-            {
+			{
+				mix_blu.SetActive(false);
                 BlueMix = true;
                 //Debug.Log("blue mix = true");
             }
             else if (Input.GetKeyDown(KeyCode.F6))
-            {
+			{
+				mix_yel.SetActive(false);
                 YellowMix = true;
                 //Debug.Log("yellow mix = true");
             }
 
             else if (Input.GetKeyDown(KeyCode.F5))
             {
-                //Debug.Log("red mix = true");
+				//Debug.Log("red mix = true");
+				mix_red.SetActive(false);
                 RedMix = true;
             }
         }

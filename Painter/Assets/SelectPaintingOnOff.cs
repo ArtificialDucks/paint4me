@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectPaintingOnOff : MonoBehaviour {
-    public List<GameObject> PaintingSelections = new List<GameObject>();
+	public List<GameObject> PaintingSelections = new List<GameObject>();
+	public GameObject completeScr;
+	public GameObject practiceScr;
     private bool activate;
     // Use this for initialization
     void Start () {
@@ -25,6 +27,8 @@ public class SelectPaintingOnOff : MonoBehaviour {
         {
             PaintingSelections[i].SetActive(true);
         }
+		completeScr.SetActive(false);
+		practiceScr.SetActive(false);
         activate = true;
     }
 
@@ -37,7 +41,7 @@ public class SelectPaintingOnOff : MonoBehaviour {
         activate = false;
     }
 
-    void OnMouseDown()
+    public void Clicked()
     {
         if (activate == false)
         {
