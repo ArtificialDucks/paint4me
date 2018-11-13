@@ -17,6 +17,7 @@ public class ReputationControlScript : MonoBehaviour {
     void UpdateReputation(int TimeSpent, int Score)
     {
         //better score and less time spent painting increase reputation more
-        Reputation += (Score/TimeSpent);
+        //Reputation += (Score/TimeSpent);
+        Reputation += Score;
     }
 }
