@@ -18,8 +18,13 @@ public class CameraChange : MonoBehaviour {
     private int ScrollLocation;
     private float CameraSpeed;
 
-    public GameObject Client;
-    
+    public GameObject WaitingClient;
+    public GameObject DisappointedClient;
+    public GameObject ThumbsUpClient;
+    public GameObject ShrugClient;
+    public GameObject WaiveClient;
+    public bool WaitReaction, DisappointedReaction, ThumbsupReaction, ShrugReaction, WaveReaction;
+
     //control whether mouse can scroll or not
     public bool CanZoom;
 
@@ -32,7 +37,13 @@ public class CameraChange : MonoBehaviour {
         QuadScript = QuadrantControllers[CurrentPainting].GetComponent<UpperQuadrantControl>();
         ScrollLocation = 0;
         CanZoom = true;
-        CameraSpeed = 6.0f;
+        CameraSpeed = 10.0f;
+
+        WaitReaction = true;
+        DisappointedReaction = false;
+        ThumbsupReaction = false;
+        ShrugReaction = false;
+        WaveReaction = false;
 	}
 	
 	// Update is called once per frame
@@ -46,18 +57,18 @@ public class CameraChange : MonoBehaviour {
             {
                 if (ScrollLocation > 0) ScrollLocation--;
                 EndLocation.position = ScrollWheelLocations[ScrollLocation].transform.position;
-                Client.SetActive(false);
             }
             //scroll down
             else if (d < 0f)
             {
                 if (ScrollLocation <= 1) ScrollLocation++;
                 EndLocation.position = ScrollWheelLocations[ScrollLocation].transform.position;
-                Client.SetActive(true);
+                //activate client once player zooms out
+                ActivateClient();
             }
         }
-        
-
+        //turn off clients once camera is reset
+        if (transform.position == ScrollWheelLocations[0].transform.position) DeactivateClient();
         step = speed * Time.deltaTime;
         if (Input.GetKeyDown("down"))
         {
@@ -156,5 +167,68 @@ public class CameraChange : MonoBehaviour {
             QuadScript = QuadrantControllers[CurrentPainting].GetComponent<UpperQuadrantControl>();
             QuadScript.Activateq9();
         }
+    }
+
+    public void ClientWait()
+    {
+        WaitReaction = true;
+        DisappointedReaction = false;
+        ThumbsupReaction = false;
+        ShrugReaction = false;
+        WaveReaction = false;
+    }
+
+    public void ClientThumbsUp()
+    {
+        WaitReaction = false;
+        DisappointedReaction = false;
+        ThumbsupReaction = true;
+        ShrugReaction = false;
+        WaveReaction = false;
+    }
+
+    public void ClientShrug()
+    {
+        WaitReaction = false;
+        DisappointedReaction = false;
+        ThumbsupReaction = false;
+        ShrugReaction = true;
+        WaveReaction = false;
+    }
+
+    public void ClientDisappointed()
+    {
+        WaitReaction = false;
+        DisappointedReaction = true;
+        ThumbsupReaction = false;
+        ShrugReaction = false;
+        WaveReaction = false;
+    }
+
+    public void ClientWaive()
+    {
+        WaitReaction = false;
+        DisappointedReaction = false;
+        ThumbsupReaction = false;
+        ShrugReaction = false;
+        WaveReaction = true;
+    }
+
+    void ActivateClient()
+    {
+        if (WaitReaction == true) WaitingClient.SetActive(true);
+        else if (DisappointedReaction == true) DisappointedClient.SetActive(true);
+        else if (ThumbsupReaction == true) ThumbsUpClient.SetActive(true);
+        else if (ShrugReaction == true) ShrugClient.SetActive(true);
+        else WaiveClient.SetActive(true);
+    }
+
+    void DeactivateClient()
+    {
+        WaitingClient.SetActive(false);
+        DisappointedClient.SetActive(false);
+        ThumbsUpClient.SetActive(false);
+        ShrugClient.SetActive(false);
+        WaiveClient.SetActive(false);
     }
 }

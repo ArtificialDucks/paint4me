@@ -28,6 +28,9 @@ public class PuzzleController : MonoBehaviour {
 	public AudioSource audiosrc;
 	public AudioClip tone;
 
+    public GameObject c;
+    CameraChange ClientScript;
+
 	void Start ()
 	{
 		soldSticker.SetActive (false);
@@ -39,6 +42,9 @@ public class PuzzleController : MonoBehaviour {
 		audiosrc = GetComponent<AudioSource> ();
 		ScoreUpdate ();
 		timerRunning = true;
+
+        //for changing client animations
+        ClientScript = c.GetComponent<CameraChange>();
 	}
 	// Update is called once per frame
 	void Update () {
@@ -105,13 +111,38 @@ public class PuzzleController : MonoBehaviour {
 			money.text = "$ " + earned.cash.ToString ();
 			timerRunning = true;
 		}
-		else { 
-			if (counter == 0) solved.text = "Judging Commissioner:\nI look forward to your finished work.";
-			else if (counter == 1) solved.text = "Judging Commissioner:\nIt's coming along I see.";
-			else if (counter == 2) solved.text = "Judging Commissioner:\nReally shaping up now.";
-			else if (counter == 3) solved.text = "Judging Commissioner:\nYou really have some talent!";
-			else if (counter == 4) solved.text = "Judging Commissioner:\nThis is turning into a masterpiece!";
-			else if (counter == 5) solved.text = "Judging Commissioner:\nIt's so beautiful... *sniff*";
+		else {
+            if (counter == 0)
+            {
+                ClientScript = c.GetComponent<CameraChange>();
+                solved.text = "Judging Commissioner:\nI look forward to your finished work.";
+                ClientScript.ClientDisappointed();
+            }
+            else if (counter == 1)
+            {
+                solved.text = "Judging Commissioner:\nIt's coming along I see.";
+                ClientScript.ClientShrug();
+            }
+            else if (counter == 2)
+            {
+                solved.text = "Judging Commissioner:\nReally shaping up now.";
+                ClientScript.ClientWait();
+            }
+            else if (counter == 3)
+            {
+                solved.text = "Judging Commissioner:\nYou really have some talent!";
+                ClientScript.ClientWaive();
+            }
+            else if (counter == 4)
+            {
+                solved.text = "Judging Commissioner:\nThis is turning into a masterpiece!";
+                ClientScript.ClientThumbsUp();
+            }
+            else if (counter == 5)
+            {
+                solved.text = "Judging Commissioner:\nIt's so beautiful... *sniff*";
+                ClientScript.ClientThumbsUp();
+            }
 		}
 	}
 	void timerEnded()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 125202af5be3b7e458f758afebd5c03b
+guid: fcae3596600f9b5439e1e69fc1981410
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -37,7 +37,7 @@ ModelImporter:
     100062: L_Wrist
     100064: mesh
     100066: Neck
-    100068: //RootNode
+    100068: PFM_boy
     100070: polySurface11
     100072: polySurface12
     100074: polySurface13
@@ -74,7 +74,8 @@ ModelImporter:
     100136: Spine_01
     100138: Spine_02
     100140: Spine_3
-    100142: transform5
+    100142: //RootNode
+    100144: transform5
     400000: curls
     400002: Head
     400004: HeadTip
@@ -109,7 +110,7 @@ ModelImporter:
     400062: L_Wrist
     400064: mesh
     400066: Neck
-    400068: //RootNode
+    400068: PFM_boy
     400070: polySurface11
     400072: polySurface12
     400074: polySurface13
@@ -146,29 +147,27 @@ ModelImporter:
     400136: Spine_01
     400138: Spine_02
     400140: Spine_3
-    400142: transform5
-    2100000: skin1
-    2100002: shirt1
-    2100004: pants1
-    2100006: undershirt_1
-    2100008: lambert2
-    2100010: shoes1
-    2100012: Default_Material
-    2100014: lambert3
-    2100016: lambert4
-    2300000: curls
-    2300002: polySurface11
-    2300004: polySurface13
-    3300000: curls
-    3300002: polySurface11
-    3300004: polySurface13
+    400142: //RootNode
+    400144: transform5
+    2100000: pfm_9_skin7
+    2100002: pfm_9_shirt7
+    2100004: pfm_9_pants7
+    2100006: pfm_9_undershirt_7
+    2100008: pfm_9_lambert20
+    2100010: pfm_9_shoes7
+    2100012: pfm_9_Default_Material6
+    2100014: pfm_9_lambert22
+    2100016: pfm_9_lambert21
     4300000: polySurface12
-    4300002: curls
-    4300004: polySurface13
-    4300006: polySurface11
+    7400000: Take 001
     9500000: //RootNode
     13700000: polySurface12
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pfm_9_lambert22
+    second: {fileID: 2100000, guid: 1040656a29bb6da4a987c7911dcd55cc, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

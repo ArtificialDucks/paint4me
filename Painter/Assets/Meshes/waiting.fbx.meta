@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 0101c6d05d3174c41a9e8a47aa00e8dd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: curls
+    100002: Head
+    100004: HeadTip
+    100006: Hip
+    100008: L_ankle
+    100010: L_collar
+    100012: L_foot
+    100014: L_ForeArme
+    100016: L_index_01
+    100018: L_index_02
+    100020: L_index_03
+    100022: L_index_04
+    100024: L_Middle_01
+    100026: L_Middle_02
+    100028: L_Middle_03
+    100030: L_Middle_04
+    100032: L_pinky_01
+    100034: L_pinky_02
+    100036: L_pinky_03
+    100038: L_Ring_01
+    100040: L_Ring_02
+    100042: L_Ring_03
+    100044: L_Ring_04
+    100046: L_shin
+    100048: L_Thigh
+    100050: L_Thumb_01
+    100052: L_Thumb_02
+    100054: L_Thumb_03
+    100056: L_Toe
+    100058: L_ToeTip
+    100060: L_UpperArm
+    100062: L_Wrist
+    100064: mesh
+    100066: Neck
+    100068: PFM_boy
+    100070: polySurface11
+    100072: polySurface12
+    100074: polySurface13
+    100076: polySurface9
+    100078: R_ankle
+    100080: R_collar
+    100082: R_foot
+    100084: R_ForeArme
+    100086: R_index_01
+    100088: R_index_02
+    100090: R_index_03
+    100092: R_index_04
+    100094: R_Middle_01
+    100096: R_Middle_02
+    100098: R_Middle_03
+    100100: R_Middle_04
+    100102: R_pinky_01
+    100104: R_pinky_02
+    100106: R_pinky_03
+    100108: R_Ring_01
+    100110: R_Ring_02
+    100112: R_Ring_03
+    100114: R_Ring_04
+    100116: R_shin
+    100118: R_Thigh
+    100120: R_Thumb_01
+    100122: R_Thumb_02
+    100124: R_Thumb_03
+    100126: R_Toe
+    100128: R_ToeTip
+    100130: R_UpperArm
+    100132: R_Wrist
+    100134: root
+    100136: Spine_01
+    100138: Spine_02
+    100140: Spine_3
+    100142: transform5
+    100144: //RootNode
+    400000: curls
+    400002: Head
+    400004: HeadTip
+    400006: Hip
+    400008: L_ankle
+    400010: L_collar
+    400012: L_foot
+    400014: L_ForeArme
+    400016: L_index_01
+    400018: L_index_02
+    400020: L_index_03
+    400022: L_index_04
+    400024: L_Middle_01
+    400026: L_Middle_02
+    400028: L_Middle_03
+    400030: L_Middle_04
+    400032: L_pinky_01
+    400034: L_pinky_02
+    400036: L_pinky_03
+    400038: L_Ring_01
+    400040: L_Ring_02
+    400042: L_Ring_03
+    400044: L_Ring_04
+    400046: L_shin
+    400048: L_Thigh
+    400050: L_Thumb_01
+    400052: L_Thumb_02
+    400054: L_Thumb_03
+    400056: L_Toe
+    400058: L_ToeTip
+    400060: L_UpperArm
+    400062: L_Wrist
+    400064: mesh
+    400066: Neck
+    400068: PFM_boy
+    400070: polySurface11
+    400072: polySurface12
+    400074: polySurface13
+    400076: polySurface9
+    400078: R_ankle
+    400080: R_collar
+    400082: R_foot
+    400084: R_ForeArme
+    400086: R_index_01
+    400088: R_index_02
+    400090: R_index_03
+    400092: R_index_04
+    400094: R_Middle_01
+    400096: R_Middle_02
+    400098: R_Middle_03
+    400100: R_Middle_04
+    400102: R_pinky_01
+    400104: R_pinky_02
+    400106: R_pinky_03
+    400108: R_Ring_01
+    400110: R_Ring_02
+    400112: R_Ring_03
+    400114: R_Ring_04
+    400116: R_shin
+    400118: R_Thigh
+    400120: R_Thumb_01
+    400122: R_Thumb_02
+    400124: R_Thumb_03
+    400126: R_Toe
+    400128: R_ToeTip
+    400130: R_UpperArm
+    400132: R_Wrist
+    400134: root
+    400136: Spine_01
+    400138: Spine_02
+    400140: Spine_3
+    400142: transform5
+    400144: //RootNode
+    2100000: skin3
+    2100002: shirt3
+    2100004: pants3
+    2100006: undershirt_3
+    2100008: lambert8
+    2100010: shoes3
+    2100012: Default_Material2
+    2100014: lambert10
+    2100016: lambert9
+    4300000: polySurface12
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface12
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert10
+    second: {fileID: 2100000, guid: 8396b10b525ccff4abb2b57b76b1bd31, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
