@@ -124,18 +124,20 @@ public class PuzzleController : MonoBehaviour {
 			timerRunning = true;
 		}
 		else {
-            if (counter == 0)
+            float f = Mathf.RoundToInt(((float)counter/maxScore) * (float)5.0);
+            Debug.Log(f);
+            if (f == 0)
             {
                 ClientScript = c.GetComponent<CameraChange>();
                 solved.text = "Judging Commissioner:\nI look forward to your finished work.";
             }
-            else if (counter == 1)
+            else if (f == 1)
             {
                 solved.text = "Judging Commissioner:\nIt's coming along I see.";
                 
                 
             }
-            else if (counter == 2)
+            else if (f == 2)
             {
                 solved.text = "Judging Commissioner:\nReally shaping up now.";
                 if (shrug)
@@ -146,7 +148,7 @@ public class PuzzleController : MonoBehaviour {
                 
                 
             }
-            else if (counter == 3)
+            else if (f == 3)
             {
                 solved.text = "Judging Commissioner:\nYou really have some talent!";
                 if (wait)
@@ -156,7 +158,7 @@ public class PuzzleController : MonoBehaviour {
                 }
 
             }
-            else if (counter == 4)
+            else if (f == 4)
             {
                 solved.text = "Judging Commissioner:\nThis is turning into a masterpiece!";
                 if (waive)
@@ -166,7 +168,7 @@ public class PuzzleController : MonoBehaviour {
                 }
                 
             }
-            else if (counter == 5)
+            else if (f == 5)
             {
                 solved.text = "Judging Commissioner:\nIt's so beautiful... *sniff*";
             }
