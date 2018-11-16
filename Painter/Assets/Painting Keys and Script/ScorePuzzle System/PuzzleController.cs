@@ -15,7 +15,7 @@ public class PuzzleController : MonoBehaviour {
 	private bool cashcheck = false;
 	private bool unsolved = true;
 	private bool complete = false;
-
+    private bool waive = true, shrug = true, disappoint = true, thumbsUp = true, wait = true;
 	public Puzzle[] puzzles; //Required points for Solved
 
 	private int counter;
@@ -91,7 +91,13 @@ public class PuzzleController : MonoBehaviour {
 		if (solvedCheck && !unsolved) {
 			timerRunning = false;
 			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
-			soldSticker.SetActive (true);
+            if (thumbsUp)
+            {
+                ClientScript.ClientThumbsUp();
+                thumbsUp = false;
+            }
+                
+            soldSticker.SetActive (true);
 			if (cashcheck) {
 				cashcheck = false;
 				earned.cash += counter * 100;
@@ -102,7 +108,12 @@ public class PuzzleController : MonoBehaviour {
 		} else if (solvedCheck && unsolved) {
 			timerRunning = false;
 			solved.text = "Judging Commissioner:\nHmm... it's not quite what I was hoping for, but it'll do.";
-			soldSticker.SetActive (true);
+            if (disappoint)
+            {
+                ClientScript.ClientDisappointed();
+                disappoint = false;
+            }
+            soldSticker.SetActive (true);
 			if (cashcheck) {
 				cashcheck = false;
 				earned.cash += counter * 100;
@@ -116,32 +127,47 @@ public class PuzzleController : MonoBehaviour {
             {
                 ClientScript = c.GetComponent<CameraChange>();
                 solved.text = "Judging Commissioner:\nI look forward to your finished work.";
-                ClientScript.ClientDisappointed();
             }
             else if (counter == 1)
             {
                 solved.text = "Judging Commissioner:\nIt's coming along I see.";
-                ClientScript.ClientShrug();
+                
+                
             }
             else if (counter == 2)
             {
                 solved.text = "Judging Commissioner:\nReally shaping up now.";
-                ClientScript.ClientWait();
+                if (shrug)
+                {
+                    ClientScript.ClientShrug();
+                    shrug = false;
+                }
+                
+                
             }
             else if (counter == 3)
             {
                 solved.text = "Judging Commissioner:\nYou really have some talent!";
-                ClientScript.ClientWaive();
+                if (wait)
+                {
+                    ClientScript.ClientWait();
+                    wait = false;
+                }
+
             }
             else if (counter == 4)
             {
                 solved.text = "Judging Commissioner:\nThis is turning into a masterpiece!";
-                ClientScript.ClientThumbsUp();
+                if (waive)
+                {
+                    ClientScript.ClientWaive();
+                    waive = false;
+                }
+                
             }
             else if (counter == 5)
             {
                 solved.text = "Judging Commissioner:\nIt's so beautiful... *sniff*";
-                ClientScript.ClientThumbsUp();
             }
 		}
 	}

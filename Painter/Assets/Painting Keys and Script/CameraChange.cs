@@ -23,6 +23,7 @@ public class CameraChange : MonoBehaviour {
     public GameObject ThumbsUpClient;
     public GameObject ShrugClient;
     public GameObject WaiveClient;
+    public GameObject ClientCam;
     public bool WaitReaction, DisappointedReaction, ThumbsupReaction, ShrugReaction, WaveReaction;
 
     //control whether mouse can scroll or not
@@ -39,7 +40,7 @@ public class CameraChange : MonoBehaviour {
         CanZoom = true;
         CameraSpeed = 10.0f;
 
-        WaitReaction = true;
+        WaitReaction = false;
         DisappointedReaction = false;
         ThumbsupReaction = false;
         ShrugReaction = false;
@@ -64,11 +65,11 @@ public class CameraChange : MonoBehaviour {
                 if (ScrollLocation <= 1) ScrollLocation++;
                 EndLocation.position = ScrollWheelLocations[ScrollLocation].transform.position;
                 //activate client once player zooms out
-                ActivateClient();
+                //ActivateClient();
             }
         }
         //turn off clients once camera is reset
-        if (transform.position == ScrollWheelLocations[0].transform.position) DeactivateClient();
+        //if (transform.position == ScrollWheelLocations[0].transform.position) DeactivateClient();
         step = speed * Time.deltaTime;
         if (Input.GetKeyDown("down"))
         {
@@ -171,56 +172,67 @@ public class CameraChange : MonoBehaviour {
 
     public void ClientWait()
     {
-        WaitReaction = true;
-        DisappointedReaction = false;
-        ThumbsupReaction = false;
-        ShrugReaction = false;
-        WaveReaction = false;
+        WaitingClient.SetActive(true);
+        DisappointedClient.SetActive(false);
+        ThumbsUpClient.SetActive(false);
+        ShrugClient.SetActive(false);
+        WaiveClient.SetActive(false);
+        ClientCam.SetActive(true);
+        StartCoroutine(WaitWait());
     }
 
     public void ClientThumbsUp()
     {
-        WaitReaction = false;
-        DisappointedReaction = false;
-        ThumbsupReaction = true;
-        ShrugReaction = false;
-        WaveReaction = false;
+        WaitingClient.SetActive(false);
+        DisappointedClient.SetActive(false);
+        ThumbsUpClient.SetActive(true);
+        ShrugClient.SetActive(false);
+        WaiveClient.SetActive(false);
+        ClientCam.SetActive(true);
+        StartCoroutine(WaitThumbsUp());
     }
 
     public void ClientShrug()
     {
-        WaitReaction = false;
-        DisappointedReaction = false;
-        ThumbsupReaction = false;
-        ShrugReaction = true;
-        WaveReaction = false;
+        WaitingClient.SetActive(false);
+        DisappointedClient.SetActive(false);
+        ThumbsUpClient.SetActive(false);
+        ShrugClient.SetActive(true);
+        WaiveClient.SetActive(false);
+        ClientCam.SetActive(true);
+        StartCoroutine(WaitShrug());
     }
 
     public void ClientDisappointed()
     {
-        WaitReaction = false;
-        DisappointedReaction = true;
-        ThumbsupReaction = false;
-        ShrugReaction = false;
-        WaveReaction = false;
+        WaitingClient.SetActive(false);
+        DisappointedClient.SetActive(true);
+        ThumbsUpClient.SetActive(false);
+        ShrugClient.SetActive(false);
+        WaiveClient.SetActive(false);
+        ClientCam.SetActive(true);
+        StartCoroutine(WaitDisappoint());
     }
 
     public void ClientWaive()
     {
-        WaitReaction = false;
-        DisappointedReaction = false;
-        ThumbsupReaction = false;
-        ShrugReaction = false;
-        WaveReaction = true;
+        WaitingClient.SetActive(false);
+        DisappointedClient.SetActive(false);
+        ThumbsUpClient.SetActive(false);
+        ShrugClient.SetActive(false);
+        WaiveClient.SetActive(true);
+        ClientCam.SetActive(true);
+        StartCoroutine(WaitWaive());
     }
 
     void ActivateClient()
     {
-        if (WaitReaction == true) WaitingClient.SetActive(true);
-        else if (DisappointedReaction == true) DisappointedClient.SetActive(true);
-        else if (ThumbsupReaction == true) ThumbsUpClient.SetActive(true);
-        else if (ShrugReaction == true) ShrugClient.SetActive(true);
-        else WaiveClient.SetActive(true);
+        WaitingClient.SetActive(false);
+        DisappointedClient.SetActive(false);
+        ThumbsUpClient.SetActive(false);
+        ShrugClient.SetActive(false);
+        WaiveClient.SetActive(false);
+        ClientCam.SetActive(true);
     }
 
     void DeactivateClient()
@@ -230,5 +242,36 @@ public class CameraChange : MonoBehaviour {
         ThumbsUpClient.SetActive(false);
         ShrugClient.SetActive(false);
         WaiveClient.SetActive(false);
+        ClientCam.SetActive(false);
+    }
+
+    IEnumerator WaitShrug()
+    {
+        yield return new WaitForSeconds(3);
+        DeactivateClient();
+    }
+
+    IEnumerator WaitWaive()
+    {
+        yield return new WaitForSeconds(5);
+        DeactivateClient();
+    }
+
+    IEnumerator WaitDisappoint()
+    {
+        yield return new WaitForSeconds(5);
+        DeactivateClient();
+    }
+
+    IEnumerator WaitThumbsUp()
+    {
+        yield return new WaitForSeconds(5);
+        DeactivateClient();
+    }
+
+    IEnumerator WaitWait()
+    {
+        yield return new WaitForSeconds(5);
+        DeactivateClient();
     }
 }
