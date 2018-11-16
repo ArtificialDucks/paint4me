@@ -8,6 +8,7 @@ public class PuzzleController : MonoBehaviour {
 
 	//public ScoreDisplay scoreObj; //GUI Score
 	public Text score;
+	public int maxScore;
 	public Text solved;
 	public Text timer;
 	public Text money;
@@ -87,7 +88,7 @@ public class PuzzleController : MonoBehaviour {
 	}
 
 	void ScoreUpdate () {
-		//score.text = "Score: " + counter.ToString ();
+		score.text = "Score: " + counter.ToString () + " / " + maxScore.ToString ();
 		if (solvedCheck && !unsolved) {
 			timerRunning = false;
 			solved.text = "Judging Commissioner:\nJust what I was picturing! I must have it at once!";
@@ -101,7 +102,7 @@ public class PuzzleController : MonoBehaviour {
 			if (cashcheck) {
 				cashcheck = false;
 				earned.cash += counter * 100;
-				targetTime = 10.0f;
+				targetTime = 5.5f;
 			}
 			money.text = "$ " + earned.cash.ToString ();
 			timerRunning = true;
@@ -117,7 +118,7 @@ public class PuzzleController : MonoBehaviour {
 			if (cashcheck) {
 				cashcheck = false;
 				earned.cash += counter * 100;
-				targetTime = 10.0f;
+				targetTime = 5.5f;
 			}
 			money.text = "$ " + earned.cash.ToString ();
 			timerRunning = true;

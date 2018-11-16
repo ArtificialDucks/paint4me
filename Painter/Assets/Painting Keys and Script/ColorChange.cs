@@ -13,7 +13,7 @@ public class ColorChange : MonoBehaviour {
 	public GameObject mix_yel;
 	public GameObject mix_blu;
 	public GameObject mix_kp;
-	public GameObject mix_end;
+	//public GameObject mix_end;
 
 	public AudioSource audiosrc;
 	public AudioClip swish;
@@ -157,7 +157,7 @@ public class ColorChange : MonoBehaviour {
 				{
 					//mix_yel.SetActive(false);
 					mix_kp.SetActive(true);
-					mix_end.SetActive(true);
+					//mix_end.SetActive(true);
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
@@ -186,7 +186,7 @@ public class ColorChange : MonoBehaviour {
 				{
 					//mix_red.SetActive(false);
 					mix_kp.SetActive(true);
-					mix_end.SetActive(true);
+					//mix_end.SetActive(true);
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
@@ -210,7 +210,7 @@ public class ColorChange : MonoBehaviour {
 				{
 					//mix_blu.SetActive(false);
 					mix_kp.SetActive(true);
-					mix_end.SetActive(true);
+					//mix_end.SetActive(true);
                     myColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
                     ChangeCount = 0;
                     //Debug.Log("reset color to black");
@@ -258,7 +258,7 @@ public class ColorChange : MonoBehaviour {
     {
         mix_strt.SetActive(true);
         mix_kp.SetActive(false);
-        mix_end.SetActive(false);
+        //mix_end.SetActive(false);
         ColorMix = false;
 
         if (f3Filled == false)

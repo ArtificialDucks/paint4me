@@ -45,7 +45,7 @@ public class SelectPaintingOnOff : MonoBehaviour {
     {
         if (activate == false)
         {
-            ActivateReferences();
+			ActivateReferences();
         }
         else
         {

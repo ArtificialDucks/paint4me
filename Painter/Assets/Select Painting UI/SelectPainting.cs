@@ -11,12 +11,14 @@ public class SelectPainting : MonoBehaviour {
     public GameObject PaintingSwapScript;
     public GameObject ParentScript;
     swapPaintings swap;
-    SelectPaintingOnOff select;
+	SelectPaintingOnOff select;
+	private bool selected;
 	// Use this for initialization
 	void Start () {
         swap = PaintingSwapScript.GetComponent<swapPaintings>();
         select = ParentScript.GetComponent<SelectPaintingOnOff>();
-        transform.gameObject.SetActive(false);
+		transform.gameObject.SetActive(false);
+		selected = false;
     }
 	
 	// Update is called once per frame
@@ -27,10 +29,13 @@ public class SelectPainting : MonoBehaviour {
     public void Clicked()
     {
         if (CurrentReputation >= RepRequirement && CurrentMoney >= MoneyRequirement)
-        {
-            swap.DeActivatePainting();
-            swap.ActivatePainting(PaintingNumber);
-            select.DeactivateReferences();
+		{
+			if (!selected) { 
+				selected = true;
+				swap.DeActivatePainting ();
+				swap.ActivatePainting (PaintingNumber);
+				select.DeactivateReferences ();
+			}
         }
     }
 }
