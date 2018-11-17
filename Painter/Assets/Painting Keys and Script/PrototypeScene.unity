@@ -1893,7 +1893,7 @@ Prefab:
     - target: {fileID: 114879800307360952, guid: 65ec8e4ca3902d2478005a84f4d1e7d1,
         type: 2}
       propertyPath: puzzles.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4228077589627604, guid: 65ec8e4ca3902d2478005a84f4d1e7d1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1975,12 +1975,12 @@ Prefab:
         type: 2}
       propertyPath: puzzles.Array.data[6]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1297886516}
     - target: {fileID: 114879800307360952, guid: 65ec8e4ca3902d2478005a84f4d1e7d1,
         type: 2}
       propertyPath: puzzles.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1039705939}
     - target: {fileID: 114879800307360952, guid: 65ec8e4ca3902d2478005a84f4d1e7d1,
         type: 2}
       propertyPath: puzzles.Array.data[8]
@@ -20195,15 +20195,15 @@ RectTransform:
   m_GameObject: {fileID: 456480892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11, y: 0.11, z: 1}
+  m_LocalScale: {x: 0.009263707, y: 0.00794864, z: 1}
   m_Children: []
   m_Father: {fileID: 211388817}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75.4, y: 1.479996}
-  m_SizeDelta: {x: 150, y: 200}
+  m_AnchoredPosition: {x: 75.4, y: 1.48}
+  m_SizeDelta: {x: 1617, y: 3414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456480894
 MonoBehaviour:
@@ -34082,7 +34082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSolved: 0
-  inputColor: {r: 0.92156863, g: 0.8901961, b: 0.015686275, a: 1}
+  inputColor: {r: 1, g: 1, b: 0.48235294, a: 1}
 --- !u!1 &768100575
 GameObject:
   m_ObjectHideFlags: 0
@@ -41231,7 +41231,7 @@ Transform:
   m_GameObject: {fileID: 923018237}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 5.172, y: 3.27, z: 10.015}
-  m_LocalScale: {x: 0.43743286, y: 0.21226284, z: 0.5909746}
+  m_LocalScale: {x: 0.43743286, y: 0.21226284, z: 0.38376713}
   m_Children: []
   m_Father: {fileID: 158160366}
   m_RootOrder: 114
@@ -46510,6 +46510,7 @@ GameObject:
   - component: {fileID: 1039705936}
   - component: {fileID: 1039705935}
   - component: {fileID: 1039705934}
+  - component: {fileID: 1039705939}
   m_Layer: 0
   m_Name: V_key (3)
   m_TagString: Untagged
@@ -46597,6 +46598,19 @@ Transform:
   m_Father: {fileID: 158160366}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: -6.0730004, y: -0.4, z: -2.18}
+--- !u!114 &1039705939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039705933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a97998019d7046b11d346b3546026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSolved: 0
+  inputColor: {r: 0.5019608, g: 1, b: 1, a: 1}
 --- !u!1 &1039765441
 GameObject:
   m_ObjectHideFlags: 0
@@ -58082,6 +58096,7 @@ GameObject:
   - component: {fileID: 1297886513}
   - component: {fileID: 1297886512}
   - component: {fileID: 1297886511}
+  - component: {fileID: 1297886516}
   m_Layer: 0
   m_Name: X_key (2)
   m_TagString: Untagged
@@ -58169,6 +58184,19 @@ Transform:
   m_Father: {fileID: 158160366}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -6.0730004, y: -0.4, z: -2.18}
+--- !u!114 &1297886516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297886510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a97998019d7046b11d346b3546026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSolved: 0
+  inputColor: {r: 0.5019608, g: 1, b: 1, a: 1}
 --- !u!1 &1302246463
 GameObject:
   m_ObjectHideFlags: 0
@@ -74721,7 +74749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1663962772
 Transform:
   m_ObjectHideFlags: 0
@@ -74730,7 +74758,7 @@ Transform:
   m_GameObject: {fileID: 1663962771}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 5.172, y: 3.27, z: 10.015}
-  m_LocalScale: {x: 0.43743286, y: 0.21226284, z: 0.5909746}
+  m_LocalScale: {x: 0.43743286, y: 0.21226284, z: 0.35499847}
   m_Children: []
   m_Father: {fileID: 1338603913}
   m_RootOrder: 114
@@ -81740,7 +81768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSolved: 0
-  inputColor: {r: 0.9529412, g: 0.8235294, b: 0.015686275, a: 1}
+  inputColor: {r: 0.92156863, g: 0.8901961, b: 0.48235294, a: 1}
 --- !u!1 &1818037120
 GameObject:
   m_ObjectHideFlags: 0
